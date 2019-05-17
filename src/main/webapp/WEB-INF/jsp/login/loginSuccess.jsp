@@ -1,19 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!doctype html>
-<!--
-p.284 [리스트 11.13] 회원가입 성공 화면
--->
+<!-- p.358 [리스트 13.8] 로그인 성공 화면 수정 -->
 <html>
 <head>
 <base href="${pageContext.request.contextPath }/" />
-<title>회원가입</title>
+<title>로그인</title>
 </head>
 <body>
-	<p>${param.name }님, 회원가입을 완료했습니다.</p>
+	<p>${sessionScope.MEMBER.name }님, 로그인에 성공했습니다.</p>
 	<p>
-		<a href="./app/main">[첫 화면 이동]</a>
+		<a href="./">메인으로 가기</a>
 	</p>
 </body>
-</html>
+<body>
