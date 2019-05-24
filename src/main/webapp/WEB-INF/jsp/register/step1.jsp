@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
-<!-- 
-p.271 [리스트 11.6] 약관 동의 화면 
--->
+<!-- p.271 [리스트 11.6] 약관 동의 화면 -->
 <html>
 <head>
 <base href="${pageContext.request.contextPath }/" />
@@ -18,3 +16,4 @@ p.271 [리스트 11.6] 약관 동의 화면
 	</form>
 </body>
 </html>
+
