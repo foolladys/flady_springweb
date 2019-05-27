@@ -70,7 +70,9 @@ public class ArticleController {
 		articleDao.addArticle(article);
 		return "redirect:/app/article/list";
 	}
-	
+	/**
+	 * 글 수정
+	 */
 	
 	@GetMapping("/article/update")
     public String update(
@@ -82,7 +84,10 @@ public class ArticleController {
         model.addAttribute("article",article);
         return "article/update";
 	}
-   
+	/**
+	 * 글 삭제
+	 */
+	
 	@GetMapping("/article/delete")
 	public String deleteArticle(
 			@RequestParam("articleId") String articleId,
@@ -91,7 +96,7 @@ public class ArticleController {
 			if(!member.getMemberId().equals(article.getUserId()))
 				return "redirect:/app/article/view?articleId="+articleId;
 			articleDao.deleteArticle(article);
-			return "redirect:/app/article/list";
+			return "article/delete";
 	}
 	
 	@PostMapping("/article/up")
@@ -99,8 +104,8 @@ public class ArticleController {
             @RequestParam("articleId") String articleId,
             @SessionAttribute("MEMBER") Member member) {
         article.setArticleId(articleId);
-        articleDao.updateArticle(article);
-        return "redirect:/app/article/list";
+        articleDao.updateArticle(article); 
+        return "article/updateok";
     }
 }
 
